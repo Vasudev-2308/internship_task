@@ -19,7 +19,7 @@ class _TasksState extends State<Tasks> {
       onWillPop: () async {
         return false;
       },
-          child: Scaffold(
+      child: Scaffold(
         body: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
@@ -29,8 +29,8 @@ class _TasksState extends State<Tasks> {
                   end: Alignment.bottomRight,
                   colors: [
                 Color(0xff647dee),
+                Color(0xff7f53ac),
                 
-                Color(0xff7f53ac)
               ])),
           child: SingleChildScrollView(
             child: Column(
@@ -89,8 +89,8 @@ class _TasksState extends State<Tasks> {
                   padding: EdgeInsets.only(left: 35, top: 20),
                   child: Text("6 Tasks Pending",
                       style: GoogleFonts.lato(
-                          textStyle:
-                              TextStyle(fontSize: 20, color: Colors.grey[300]))),
+                          textStyle: TextStyle(
+                              fontSize: 20, color: Colors.grey[300]))),
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 45, left: 20, right: 20),
@@ -98,16 +98,16 @@ class _TasksState extends State<Tasks> {
                     height: 150,
                     width: MediaQuery.of(context).size.width * 0.9,
                     decoration: BoxDecoration(
-                      
-                        borderRadius: BorderRadius.circular(30),
-                        boxShadow: [
-                           BoxShadow(
-          color: Colors.deepPurple,
-          blurRadius: 4,
-          offset: Offset(4, 8), // Shadow position
-        ), //BoxShadow
-                        ],
-                        color: Colors.deepPurple[900],),
+                      borderRadius: BorderRadius.circular(30),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.deepPurple,
+                          blurRadius: 4,
+                          offset: Offset(4, 8), // Shadow position
+                        ), //BoxShadow
+                      ],
+                      color: Colors.deepPurple[900],
+                    ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -127,7 +127,8 @@ class _TasksState extends State<Tasks> {
                             child: Text(
                               "Mike and Anita",
                               style: GoogleFonts.lato(
-                                  textStyle: TextStyle(color: Colors.grey[400])),
+                                  textStyle:
+                                      TextStyle(color: Colors.grey[400])),
                             )),
                         Padding(
                             padding: EdgeInsets.only(left: 18, top: 25),
@@ -172,7 +173,8 @@ class _TasksState extends State<Tasks> {
                                   ),
                                 ),
                                 Container(
-                                  width: MediaQuery.of(context).size.width / 1.7,
+                                  width:
+                                      MediaQuery.of(context).size.width / 1.7,
                                 ),
                                 Text("Now",
                                     style: GoogleFonts.lato(
@@ -215,16 +217,19 @@ class _TasksState extends State<Tasks> {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 35, bottom: 20),
-                        child: makeContainerone("22", "Done"),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 35),
-                        child: makeContainertwo("10", "On going"),
-                      )
-                    ]),
+                    Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding:
+                                const EdgeInsets.only(left: 35, bottom: 20),
+                            child: makeContainerone("22", "Done"),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 35),
+                            child: makeContainertwo("10", "On going"),
+                          )
+                        ]),
                     Column(children: [
                       Padding(
                         padding: const EdgeInsets.only(left: 25.0, bottom: 20),
@@ -257,21 +262,35 @@ Widget makeContainerone(String maintext, String progress) {
       color: Colors.deepPurple[900],
       borderRadius: BorderRadius.circular(30),
       boxShadow: [
-         BoxShadow(
-        color: Colors.deepPurple,
-        blurRadius: 4,
-        offset: Offset(4, 8), // Shadow position
-      ), //BoxShadow
+        BoxShadow(
+          color: Colors.deepPurple,
+          blurRadius: 4,
+          offset: Offset(4, 8), // Shadow position
+        ), //BoxShadow
       ],
     ),
     child: Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [Text(maintext,
-         style: GoogleFonts.lato(textStyle: TextStyle(
-           fontWeight: FontWeight.bold, color: Colors.white, fontSize: 25)),),
-           SizedBox(height: 10,), Text(progress,style: GoogleFonts.lato(textStyle: TextStyle(
-           fontWeight: FontWeight.bold, color: Colors.grey[400], fontSize: 14)))],
+        children: [
+          Text(
+            maintext,
+            style: GoogleFonts.lato(
+                textStyle: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 25)),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Text(progress,
+              style: GoogleFonts.lato(
+                  textStyle: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey[400],
+                      fontSize: 14)))
+        ],
       ),
     ),
   );
@@ -285,23 +304,36 @@ Widget makeContainertwo(String maintext, String progress) {
       color: Colors.deepPurple[900],
       borderRadius: BorderRadius.circular(30),
       boxShadow: [
-         BoxShadow(
-        color: Colors.deepPurple,
-        blurRadius: 4,
-        offset: Offset(4, 8), // Shadow position
-      ),
+        BoxShadow(
+          color: Colors.deepPurple,
+          blurRadius: 4,
+          offset: Offset(4, 8), // Shadow position
+        ),
       ],
     ),
     child: Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [Text(maintext,
-         style: GoogleFonts.lato(textStyle: TextStyle(
-           fontWeight: FontWeight.bold, color: Colors.white, fontSize: 25)),),
-           SizedBox(height: 10,), Text(progress,style: GoogleFonts.lato(textStyle: TextStyle(
-           fontWeight: FontWeight.bold, color: Colors.grey[400], fontSize: 14)))],
+        children: [
+          Text(
+            maintext,
+            style: GoogleFonts.lato(
+                textStyle: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 25)),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Text(progress,
+              style: GoogleFonts.lato(
+                  textStyle: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey[400],
+                      fontSize: 14)))
+        ],
       ),
     ),
   );
 }
-
